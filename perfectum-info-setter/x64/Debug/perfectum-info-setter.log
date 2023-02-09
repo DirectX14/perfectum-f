@@ -1,2 +1,5 @@
 ﻿  main.cpp
+C:\Users\user\Documents\Visual Studio 2022\Projects\perfectum-info-setter\perfectum-info-setter\main.cpp(24,33): warning C4804: "<<": unsichere Verwendung des Typs "bool" in einer Operation
+C:\Users\user\Documents\Visual Studio 2022\Projects\perfectum-info-setter\perfectum-info-setter\main.cpp(24,12): warning C4552: "<<": Ergebnis des Ausdrucks nicht verwendet.
+C:\Users\user\Documents\Visual Studio 2022\Projects\perfectum-info-setter\perfectum-info-setter\main.cpp(62,13): warning C4101: "rgResult": Unreferenzierte lokale Variable
   perfectum-info-setter.vcxproj -> C:\Users\user\Documents\Visual Studio 2022\Projects\perfectum-info-setter\x64\Debug\perfectum-info-setter.exe

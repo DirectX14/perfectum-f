@@ -57,3 +57,50 @@ bool setComputerName(string computerName) {
 
     return flResult;
 }
+
+
+//https://learn.microsoft.com/en-us/windows/win32/sysinfo/writing-and-deleting-registry-data
+bool setRegistryOEMInfo(string key, string value) {
+    LSTATUS rgResult;
+    HKEY hKeyRoot = HKEY_LOCAL_MACHINE;
+
+    LONG lResult;
+
+    LPCTSTR lpSubKey;
+    HKEY hKey;
+
+    lpSubKey = TEXT("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\TestDir");
+
+
+    lResult = RegDeleteKey(hKeyRoot, lpSubKey);
+
+    if (lResult == ERROR_SUCCESS)
+        return 1;
+
+    lResult = RegOpenKeyEx(hKeyRoot, lpSubKey, 0, KEY_READ, &hKey);
+
+    if (lResult != ERROR_SUCCESS)
+    {
+        if (lResult == ERROR_FILE_NOT_FOUND) {
+            cout << "Registry Key not found." << endl;
+            return 1;
+        }
+        else {
+            cout << "Error opening registry key." << endl;
+            return 0;
+        }
+    }
+
+    RegCloseKey(hKey);
+
+    lResult = RegDeleteKey(hKeyRoot, lpSubKey);
+
+    if (lResult == ERROR_SUCCESS)
+        return 1;
+
+    return 0;
+
+    //rgResult = RegOpenKeyExA(HKEY_LOCAL_MACHINE, )
+
+    //return 0;
+}

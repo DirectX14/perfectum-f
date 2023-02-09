@@ -1,4 +1,4 @@
-# perfectum-f
+# perfectum-info-setter
 ## Just a script that switch some pc information for customers
 
 ### TODO:
